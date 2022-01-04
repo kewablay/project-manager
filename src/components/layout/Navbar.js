@@ -10,8 +10,8 @@ const Navbar = () => {
         <Link to="/" className="brand">
           ProjectOview
         </Link>
-        <SignedInLinks />
-        {/* <SignedOutLinks /> */}
+        {/* <SignedInLinks /> */}
+        <SignedOutLinks />
       </div>
     </div>
   );
