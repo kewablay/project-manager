@@ -8,10 +8,10 @@ const Navbar = () => {
     <div className="navbar grey darken-2">
       <div className="container nav-cont">
         <Link to="/" className="brand">
-          ProjectOview
+          <span>P</span>roject<span>o</span>view
         </Link>
-        {/* <SignedInLinks /> */}
         <SignedOutLinks />
+        <SignedInLinks />
       </div>
     </div>
   );
