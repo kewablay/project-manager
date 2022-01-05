@@ -1,8 +1,17 @@
+html{
+  min-height: 100%;
+}
 body {
   margin: 0;
+  min-height: 100%;
   font-family: 'Montserrat', sans-serif;
 font-family: 'Poppins', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background: rgb(244, 253, 244);
+
+  
+ /* important */
+ background-image: radial-gradient( circle 1224px at 10.6% 8.8%,  rgba(255,255,255,1) 0%, rgba(153,202,251,1) 100.2% );
+
 }
