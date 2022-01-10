@@ -2,6 +2,7 @@ import React from "react";
 import { compose } from "redux";
 import { firestoreConnect } from "react-redux-firebase";
 import { connect } from "react-redux";
+import Loading from "../layout/Loading";
 
 function ProjectDetail(props) {
   const id = props.match.params.id;
@@ -25,7 +26,11 @@ function ProjectDetail(props) {
       </div>
     );
   } else {
-    return <p>Loading data....</p>;
+    return (
+      <div className="container section project-details">
+        <Loading />
+      </div>
+    );
   }
 }
 

@@ -2,8 +2,9 @@ import React, { Component } from "react";
 import ProjectList from "../projects/ProjectList";
 import Notifications from "./Notifications";
 import { connect } from "react-redux";
-import {compose} from 'redux'
+import { compose } from "redux";
 import { firestoreConnect } from "react-redux-firebase";
+import Loading from "../layout/Loading";
 
 export class Dashboard extends Component {
   render() {
@@ -12,9 +13,11 @@ export class Dashboard extends Component {
       <div className="dashboard container">
         <div className="row">
           <div className="col s12 m6">
-            <ProjectList projects={projects} />
+            <div className="projects-container">
+              {projects ? <ProjectList projects={projects} /> : <Loading />}
+            </div>
           </div>
-          <div className="col s12 m5 offset-m1"> 
+          <div className="col s12 m5 offset-m1">
             <Notifications />
           </div>
         </div>
@@ -24,7 +27,7 @@ export class Dashboard extends Component {
 }
 
 const mapStateToProps = (state) => {
-  console.log(state)
+  console.log(state);
   return {
     projects: state.firestore.ordered.projects,
   };
@@ -32,7 +35,5 @@ const mapStateToProps = (state) => {
 
 export default compose(
   connect(mapStateToProps),
-  firestoreConnect([
-    {collection: 'projects'}
-  ])
+  firestoreConnect([{ collection: "projects" }])
 )(Dashboard);
